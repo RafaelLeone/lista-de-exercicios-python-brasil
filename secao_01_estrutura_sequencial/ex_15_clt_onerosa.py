@@ -27,3 +27,9 @@ Mostrar os resultados com duas casas decimais
 
 def calcular_assalto_no_salario():
     """Escreva aqui em baixo a sua solução"""
+    numeros =[80, 55.62]
+    print(f'''+ Salário Bruto : {"%.2f" %(numeros[0]*numeros[1])}
+- IR (11%) : R$ {"%.2f" %(0.11*(numeros[0]*numeros[1]))}
+- INSS (8%) : R$ {"%.2f" %(0.08*(numeros[0]*numeros[1]))}
+- Sindicato ( 5%) : R$ {"%.2f" %(0.05*(numeros[0]*numeros[1]))}
+= Salário Liquido : R$ {"%.2f" %((numeros[0]*numeros[1])-(0.24*(numeros[0]*numeros[1])))}''')
