@@ -17,3 +17,6 @@ Mostrar salário com duas casas decimais
 
 def calcular_salario():
     """Escreva aqui em baixo a sua solução"""
+    numeros =[80, 55.62]
+    salario = numeros[0] * numeros[1]
+    print(f'Seu salário desse mês é {"%.2f" %salario}')
