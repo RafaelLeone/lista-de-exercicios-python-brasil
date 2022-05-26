@@ -31,7 +31,7 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
     tamanho_parede = float(input('Informar valor do tamanho da área a ser pintada em metros quadrados: '))
-    litros_necessarios = round(((tamanho_parede/6)*1.1)+0.5)
+    litros_necessarios = round(((tamanho_parede/6)*1.1) +0.5)
     latas_necessarias = round((litros_necessarios/18) +0.5) #80
     galoes_necessarios = round((litros_necessarios/3.6) +0.5) #25
     
@@ -39,6 +39,4 @@ def calcular_latas_e_preco_de_tinta():
     print(f'''Você deve comprar {int(litros_necessarios + 0.5)} litros de tinta.
 Você pode comprar {latas_necessarias} lata(s) de 18 litros a um custo de R$ {80*latas_necessarias}. Vão sobrar {"%.1f" %(((latas_necessarias*18) - litros_necessarios))} litro(s) de tinta.
 Você pode comprar {galoes_necessarios} lata(s) de 3.6 litros a um custo de R$ {25*galoes_necessarios}. Vão sobrar {"%.1f" %(((galoes_necessarios*3.6) - litros_necessarios))} litro(s) de tinta.
-''')
-    print(f'o {litros_necessarios}')
-calcular_latas_e_preco_de_tinta()
+Para menor custo, você pode comprar {latas_necessarias-1} lata(s) de 18 litros e {galoes_necessarios-(5*(latas_necessarias-1))} galão(ões) de 3.6 litros a um custo de R$ {((latas_necessarias-1)*80) + ((galoes_necessarios-(5*(latas_necessarias-1)))*25)}. Vão sobrar 2.6 litro(s) de tinta.''')
