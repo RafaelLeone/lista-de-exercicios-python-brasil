@@ -29,11 +29,14 @@ def validar_data(data: str):
     for i in range(0, len(mylist)):
         mylist[i] = int(mylist[i])
     if len(mylist) == 3:
-        if (mylist[1]) <= 12:
-            if mylist[1] in dict_month.keys():
-                print(dict_month[mylist[1]])
+        if mylist[1] in dict_month.keys():
+            value = dict_month[mylist[1]]
+            if mylist[0] < value:
+                print("'Data válida'")
+            else:
+                print("'Data inválida'")
         else:
             print("'Data inválida'")
     else:
         print("'Data inválida'")
-validar_data('01/02/2002')
+validar_data('01/04/2002')
