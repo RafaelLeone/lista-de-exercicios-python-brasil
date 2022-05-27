@@ -26,8 +26,11 @@ def validar_data(data: str):
     """Escreva aqui em baixo a sua solução"""
     dict_month = {1 : 31, 2 : 28, 3 : 31, 4 : 30, 5 : 31, 6 : 30, 7 : 31, 8 : 31, 9 : 30, 10 : 31, 11 : 30, 12 : 31}
     mylist = data.split('/')
-    for i in range(0, len(mylist)):
-        mylist[i] = int(mylist[i])
+    try:
+        for i in range(0, len(mylist)):
+            mylist[i] = int(mylist[i])
+    except:
+        pass
     if len(mylist) == 3:
         if mylist[1] in dict_month.keys():
             value = dict_month[mylist[1]]
@@ -39,4 +42,3 @@ def validar_data(data: str):
             print("'Data inválida'")
     else:
         print("'Data inválida'")
-validar_data('01/04/2002')
