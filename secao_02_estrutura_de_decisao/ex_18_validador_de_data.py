@@ -24,16 +24,16 @@ Faça um Programa que peça uma data no formato dd/mm/aaaa e determine se a mesm
 
 def validar_data(data: str):
     """Escreva aqui em baixo a sua solução"""
+    dict_month = {1 : 31, 2 : 28, 3 : 31, 4 : 30, 5 : 31, 6 : 30, 7 : 31, 8 : 31, 9 : 30, 10 : 31, 11 : 30, 12 : 31}
     mylist = data.split('/')
     for i in range(0, len(mylist)):
         mylist[i] = int(mylist[i])
-    print(mylist)
-    print(type(mylist[0]))
     if len(mylist) == 3:
         if (mylist[1]) <= 12:
-            print(True)
+            if mylist[1] in dict_month.keys():
+                print(dict_month[mylist[1]])
         else:
-            print(False)
+            print("'Data inválida'")
     else:
-        print(False)
-validar_data('01/13')
+        print("'Data inválida'")
+validar_data('01/02/2002')
