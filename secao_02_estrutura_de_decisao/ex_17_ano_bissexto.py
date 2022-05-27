@@ -17,6 +17,14 @@ bissexto.
 
 """
 
-
 def eh_ano_bissexto(ano: int):
     """Escreva aqui em baixo a sua solução"""
+    mylist = list()
+    for i in str(ano):
+        mylist.append(i)
+    if mylist[-1] == '0' and mylist[-2] == '0' and (ano % 400) == 0:
+        print(True)
+    elif (mylist[-1] != '0' or mylist[-2] != '0') and (ano % 4) == 0:
+        print(True)
+    else:
+        print(False)
