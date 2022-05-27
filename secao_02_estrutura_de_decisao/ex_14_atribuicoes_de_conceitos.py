@@ -46,3 +46,29 @@ Mostar valores com uma casa decimal.
 
 def calcular_conceito(nota_1: float, nota_2: float):
     """Escreva aqui em baixo a sua solução"""
+    media = (nota_1+nota_2)/2
+    if  media <= 3.9:
+        print(f'''Notas: {"%.1f" %nota_1} e {"%.1f" %nota_2}.
+Média: {"%.1f" %media}
+Conceito: E
+Status: REPROVADO''')
+    elif 4 < media <= 5.9:
+        print(f'''Notas: {"%.1f" %nota_1} e {"%.1f" %nota_2}.
+Média: {"%.1f" %media}
+Conceito: D
+Status: REPROVADO''')
+    elif 6 < media <= 7.4:
+        print(f'''Notas: {"%.1f" %nota_1} e {"%.1f" %nota_2}.
+Média: {"%.1f" %media}
+Conceito: C
+Status: APROVADO''')
+    elif 7.5 < media <= 8.9:   
+        print(f'''Notas: {"%.1f" %nota_1} e {"%.1f" %nota_2}.
+Média: {"%.1f" %media}
+Conceito: B
+Status: APROVADO''')
+    else:
+        print(f'''Notas: {"%.1f" %nota_1} e {"%.1f" %nota_2}.
+Média: {"%.1f" %media}
+Conceito: A
+Status: APROVADO''')
