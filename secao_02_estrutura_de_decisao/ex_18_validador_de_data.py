@@ -31,14 +31,19 @@ def validar_data(data: str):
             mylist[i] = int(mylist[i])
     except:
         pass
-    if len(mylist) == 3:
-        if mylist[1] in dict_month.keys():
-            value = dict_month[mylist[1]]
-            if mylist[0] < value:
-                print("'Data válida'")
-            else:
-                print("'Data inválida'")
-        else:
-            print("'Data inválida'")
-    else:
+
+    if len(mylist) != 3:
         print("'Data inválida'")
+        return
+
+    if mylist[1] not in dict_month.keys():
+        print("'Data inválida'")
+        return
+
+    value = dict_month[mylist[1]]
+    if mylist[0] < value:
+        print("'Data válida'")
+        return
+
+    print("'Data inválida'")
+
