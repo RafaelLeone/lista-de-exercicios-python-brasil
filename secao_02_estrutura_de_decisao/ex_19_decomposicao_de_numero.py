@@ -56,7 +56,7 @@ def decompor_numero(numero: int):
         print("'O número precisa ser menor que 1000'")
         return
     
-    if numero < 0:
+    if numero <= 0:
         print("'O número precisa ser positivo'")
         return
 
