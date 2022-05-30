@@ -24,13 +24,71 @@ uma nota de 5 e quatro notas de 1.
     '3 notas de R$ 100, 1 nota de R$ 50, 4 notas de R$ 10, 1 nota de R$ 5 e 4 notas de R$ 1'
 """
 
-
 def calcular_troco(valor: int) -> str:
     """Escreva aqui em baixo a sua solução"""
-    tipos_de_notas = [1, 5, 10, 50, 100]
-    pedacos=[]
-    resto = valor
-    while resto > 0:
-        tipo_de_nota = tipos_de_notas.pop()
-    if len(pedacos)==1:
-        return pedacos.pop()
+    # tipos_de_notas = [1, 5, 10, 50, 100]
+    # pedacos=[]
+    # resto = valor
+    # while resto > 0:
+    #     tipo_de_nota = tipos_de_notas.pop()
+    # if len(pedacos)==1:
+    #     return pedacos.pop()
+
+    list = str(valor)
+
+    try:
+        unidade = int(list[-1])
+        dezena = int(list[-2])
+        centena = int(list[-3])
+    except:
+        pass
+
+    # contador_de_1 = 0
+    # contador_de_5 = 0
+    # contador_de_10 = 0
+    # contador_de_50 = 0
+    # contador_de_100 = 0
+    
+    if unidade < 5:
+        contador_de_1 = unidade
+
+    if unidade > 5:
+        contador_de_1 = unidade - 5
+
+    if dezena < 5:
+        contador_de_10 = dezena
+
+    if dezena > 5:
+        contador_de_10 = dezena - 5
+
+    if valor == 1:
+        print(f"'1 nota de R$ 1'")
+        return
+
+    if  1 < valor < 5:
+        print(f"'{contador_de_1} notas de R$ 1'")
+        return
+
+    if valor == 5:
+        print(f"'1 nota de R$ 5'")
+        return
+
+    if valor == 6:
+        print(f"'1 nota de R$ 5 e 1 nota de R$ 1'")
+        return
+
+    if 6 < valor < 10:
+        print(f"'1 nota de R$ 5 e {contador_de_1} notas de R$ 1'")
+        return
+
+    if valor == 10:
+        print("'1 nota de R$ 10'")
+        return
+
+    if 10 < valor < 50 and unidade == 0:
+        print(f"'{contador_de_10} notas de R$ 10'")
+        return
+
+
+
+calcular_troco(21)
