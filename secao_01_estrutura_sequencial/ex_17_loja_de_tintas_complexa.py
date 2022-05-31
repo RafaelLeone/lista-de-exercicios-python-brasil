@@ -36,7 +36,7 @@ def calcular_latas_e_preco_de_tinta():
     galoes_necessarios = round((litros_necessarios/3.6) +0.5) #25
     latas_menor = round((litros_necessarios/18) - 0.5)
     galoes_menor = 0
-    if (litros_necessarios%18) < 10.9:
+    if 0 < (litros_necessarios%18) < 10.9:
         galoes_menor = int(litros_necessarios%18)
     if (litros_necessarios%18) > 10.9:
         latas_menor += 1
