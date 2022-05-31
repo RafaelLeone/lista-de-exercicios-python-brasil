@@ -41,12 +41,12 @@ def calcular_latas_e_preco_de_tinta():
     if (litros_necessarios%18) > 10.9:
         latas_menor += 1
     if litros_necessarios <= 18:
-        sobrar = -(18-(litros_necessarios%18))
+        sobrar = 18-(litros_necessarios%18)
     if litros_necessarios > 18:
-        sobrar = litros_necessarios%18 - galoes_menor*3.6
+        sobrar = 18-(litros_necessarios%18 - galoes_menor*3.6)
 
 
     print(f'''Você deve comprar {int(litros_necessarios + 0.5)} litros de tinta.
 Você pode comprar {latas_necessarias} lata(s) de 18 litros a um custo de R$ {80*latas_necessarias}. Vão sobrar {"%.1f" %(((latas_necessarias*18) - litros_necessarios))} litro(s) de tinta.
 Você pode comprar {galoes_necessarios} lata(s) de 3.6 litros a um custo de R$ {25*galoes_necessarios}. Vão sobrar {"%.1f" %(((galoes_necessarios*3.6) - litros_necessarios))} litro(s) de tinta.
-Para menor custo, você pode comprar {latas_menor} lata(s) de 18 litros e {galoes_menor} galão(ões) de 3.6 litros a um custo de R$ {((latas_menor)*80) + (galoes_menor*25)}. Vão sobrar {-sobrar} litro(s) de tinta.''')
+Para menor custo, você pode comprar {latas_menor} lata(s) de 18 litros e {galoes_menor} galão(ões) de 3.6 litros a um custo de R$ {((latas_menor)*80) + (galoes_menor*25)}. Vão sobrar {sobrar} litro(s) de tinta.''')
