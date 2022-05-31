@@ -61,6 +61,8 @@ def calcular_troco(valor: int) -> str:
     if dezena > 5:
         contador_de_10 = dezena - 5
 
+    contador_de_100 = centena 
+
     if valor == 1:
         print(f"'1 nota de R$ 1'")
         return
@@ -181,4 +183,133 @@ def calcular_troco(valor: int) -> str:
         print(f"'1 nota de R$ 50, {contador_de_10} notas de R$ 10, 1 nota de R$ 5 e {contador_de_1} notas de R$ 1'")
         return
 
-calcular_troco(79)
+    if valor == 100:
+        print("'1 nota de R$ 100'")
+        return
+
+    if centena > 1 and dezena == 0 and unidade == 0:
+        print(f"'{contador_de_100} notas de R$ 100'")
+        return
+
+    if valor == 101:
+        print(f"'1 nota de R$ 100 e 1 nota de R$ 1'")
+        return
+
+    if  101 < valor < 105:
+        print(f"'1 nota de R$ 100 e {contador_de_1} notas de R$ 1'")
+        return
+
+    if valor == 105:
+        print(f"'1 nota de R$ 100 e 1 nota de R$ 5'")
+        return
+
+    if valor == 106:
+        print(f"'1 nota de R$ 100, 1 nota de R$ 5 e 1 nota de R$ 1'")
+        return
+
+    if 106 < valor < 110:
+        print(f"'1 nota de R$ 100, 1 nota de R$ 5 e {contador_de_1} notas de R$ 1'")
+        return
+
+    if valor == 110:
+        print("'1 nota de R$ 100 e 1 nota de R$ 10'")
+        return
+
+    if 110 < valor < 150 and unidade == 0:
+        print(f"'1 nota de R$ 100 e {contador_de_10} notas de R$ 10'")
+        return
+
+    if 110 < valor < 150 and unidade == 1:
+        print(f"'1 nota de R$ 100, {contador_de_10} notas de R$ 10 e 1 nota de R$ 1'")
+        return
+
+    if 110 < valor < 150 and 1 < unidade < 5:
+        print(f"'1 nota de R$ 100, {contador_de_10} notas de R$ 10 e {contador_de_1} notas de R$ 1'")
+        return
+
+    if 110 < valor < 150 and unidade == 5:
+        print(f"'1 nota de R$ 100, {contador_de_10} notas de R$ 10 e 1 nota de R$ 5'")
+        return
+
+    if 110 < valor < 150 and unidade == 6:
+        print(f"'1 nota de R$ 100, {contador_de_10} notas de R$ 10, 1 nota de R$ 5 e 1 nota de R$ 1'")
+        return
+
+    if 110 < valor < 150 and unidade > 6:
+        print(f"'1 nota de R$ 100, {contador_de_10} notas de R$ 10, 1 nota de R$ 5 e {contador_de_1} notas de R$ 1'")
+        return
+
+    if valor == 150:
+        print("'1 nota de R$ 100 e 1 nota de R$ 50'")
+        return
+    
+    if valor == 151:
+        print("'1 nota de R$ 100, 1 nota de R$ 50 e 1 nota de R$ 5'")
+        return
+
+    if 150 < valor < 160 and 1 < unidade < 5:
+        print(f"'1 nota de R$ 100, 1 nota de R$ 50 e {contador_de_1} notas de R$ 1'")
+        return
+
+    if 150 < valor < 160 and unidade > 6:
+        print(f"'1 nota de R$ 100, 1 nota de R$ 50, 1 nota de R$ 5  e {contador_de_1} notas de R$ 1'")
+        return
+
+    if valor == 155:
+        print("'1 nota de R$ 100, 1 nota de R$ 50 e 1 nota de R$ 5'")
+        return
+
+    if valor == 156:
+        print(f"'1 nota de R$ 100, 1 nota de R$ 50, 1 nota de R$ 5 e 1 nota de R$ 1'")
+        return
+    
+    if valor == 160:
+        print("'1 nota de R$ 100, 1 nota de R$ 50 e 1 nota de R$ 10'")
+        return
+
+    if valor == 161:
+        print("'1 nota de R$ 100, 1 nota de R$ 50, 1 nota de R$ 10 e uma nota de R$ 1'")
+        return
+
+    if 150 < valor < 200 and unidade == 0 and valor != 60:
+        print(f"'1 nota de R$ 100, 1 nota de R$ 50 e {contador_de_10} notas de R$ 10'")
+        return
+    
+    if 150 < valor < 200 and dezena == 6 and 1 < unidade < 5:
+        print(f"'1 nota de R$ 100, 1 nota de R$ 50, 1 nota de R$ 10 e {contador_de_1} notas de R$ 1'")
+        return
+
+    if valor == 165:
+        print(f"'1 nota de R$ 100, 1 nota de R$ 50, 1 nota de R$ 10 e 1 nota de R$ 5'")
+        return
+
+    if valor == 166:
+        print(f"'1 nota de R$ 100, 1 nota de R$ 50, 1 nota de R$ 10, 1 nota de R$ 5 e 1 nota de R$ 1'")
+        return
+
+    if 150 < valor < 200 and dezena == 6 and unidade > 6:
+        print(f"'1 nota de R$ 100, 1 nota de R$ 50, 1 nota de R$ 10, 1 nota de R$ 5 e {contador_de_1} notas de R$ 1'")
+        return
+
+    if 50 < valor < 100 and dezena > 6 and unidade == 1:
+        print(f"'1 nota de R$ 50, {contador_de_10} notas de R$ 10 e 1 nota de R$ 1'")
+        return
+
+    if 50 < valor < 100 and dezena > 6 and 1 < unidade < 5:
+        print(f"'1 nota de R$ 50, {contador_de_10} notas de R$ 10 e {contador_de_1} notas de R$ 1'")
+        return
+
+    if 50 < valor < 100 and dezena > 6 and unidade == 5:
+        print(f"'1 nota de R$ 50, {contador_de_10} notas de R$ 10 e 1 nota de R$ 5'")
+        return
+
+    if 50 < valor < 100 and dezena > 6 and unidade == 6:
+        print(f"'1 nota de R$ 50, {contador_de_10} notas de R$ 10, 1 nota de R$ 5 e 1 nota de R$ 1'")
+        return
+
+    if 50 < valor < 100 and dezena > 6 and unidade > 6:
+        print(f"'1 nota de R$ 50, {contador_de_10} notas de R$ 10, 1 nota de R$ 5 e {contador_de_1} notas de R$ 1'")
+        return
+
+    
+calcular_troco(900)
