@@ -89,6 +89,15 @@ def calcular_troco(valor: int) -> str:
         print(f"'{contador_de_10} notas de R$ 10'")
         return
 
+    if 10 < valor < 50 and unidade != 0:
+        if
+        print(f"'{contador_de_10} notas de R$ 10'")
+        return
+
+    if valor == 50:
+        print("'1 nota de R$ 50'")
+        return
+
 
 
 calcular_troco(21)
