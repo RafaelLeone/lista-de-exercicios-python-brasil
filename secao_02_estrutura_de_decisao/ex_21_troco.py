@@ -112,7 +112,54 @@ def calcular_troco(valor: int) -> str:
     if valor == 50:
         print("'1 nota de R$ 50'")
         return
+    
+    if valor == 51:
+        print("'1 nota de R$ 50 e 1 nota de R$ 5'")
+        return
+
+    if 50 < valor < 60 and 1 < unidade < 5:
+        print(f"'1 nota de R$ 50 e {contador_de_10} notas de R$ 1'")
+        return
+
+    if 50 < valor < 60 and unidade > 6:
+        print(f"'1 nota de R$ 50, 1 nota de R$ 5  e {contador_de_1} notas de R$ 1'")
+        return
+
+    if valor == 55:
+        print("'1 nota de R$ 50 e 1 nota de R$ 5'")
+        return
+
+    if valor == 56:
+        print(f"'1 nota de R$ 50, 1 nota de R$ 5 e 1 nota de R$ 1'")
+        return
+    
+    if valor == 60:
+        print("'1 nota de R$ 50 e 1 nota de R$ 10'")
+        return
+
+    if valor == 61:
+        print("'1 nota de R$ 50, 1 nota de R$ 10 e uma nota de R$ 1'")
+        return
+
+    if 50 < valor < 100 and unidade == 0 and valor != 60:
+        print(f"'1 nota de R$ 50 e {contador_de_10} notas de R$ 10'")
+        return
+    
+    if 50 < valor < 100 and dezena == 6 and 1 < unidade < 5:
+        print(f"'1 nota de R$ 50, 1 nota de R$ 10 e {contador_de_1} notas de R$ 1'")
+        return
+
+    if valor == 65:
+        print(f"'1 nota de R$ 50, 1 nota de R$ 10 e 1 nota de R$ 5'")
+        return
+
+    if valor == 66:
+        print(f"'1 nota de R$ 50, 1 nota de R$ 10, 1 nota de R$ 5 e 1 nota de R$ 1'")
+        return
+
+    if 50 < valor < 100 and dezena == 6 and unidade > 6:
+        print(f"'1 nota de R$ 50, 1 nota de R$ 10, 1 nota de R$ 5 e {contador_de_1} notas de R$ 1'")
+        return
 
 
-
-calcular_troco(49)
+calcular_troco(69)
