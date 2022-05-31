@@ -28,3 +28,5 @@ def eh_ano_bissexto(ano: int):
         print(True)
     else:
         print(False)
+
+eh_ano_bissexto(200)

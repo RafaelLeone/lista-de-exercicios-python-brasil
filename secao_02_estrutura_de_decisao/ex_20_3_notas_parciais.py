@@ -27,3 +27,5 @@ def calcular_status(nota_1, nota_2, nota_3):
         print("'Aprovado'")
     else:
         print("'Reprovado'")
+
+calcular_status(1, 2, 3)
