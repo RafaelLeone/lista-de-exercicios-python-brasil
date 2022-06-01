@@ -75,29 +75,29 @@ def calcular_preco_da_compra(kilos_de_morango: int, kilos_de_maca: int):
         return
     
     if kilos_de_morango == 0 and 5 >= kilos_de_maca > 0:
-        print(f'''(+)  Maça     - valor:  R$ {"%.2f" %(kg_maca_ate_5*kilos_de_maca)} - quantidade:  {kilos_de_maca} kg - preço: R$ 1.80/kg
+        print(f'''(+)  Maça     - valor:  R$  {"%.2f" %(kg_maca_ate_5*kilos_de_maca)} - quantidade:  {kilos_de_maca} kg - preço: R$ 1.80/kg
 (-)  Desconto - valor:  R$  {"%.2f" %(desconto*(kg_maca_ate_5*kilos_de_maca))}
-          Valor Total:  R$ {"%.2f" %((kg_maca_ate_5*kilos_de_maca)-((kg_maca_ate_5*kilos_de_maca)*desconto))}''')
+          Valor Total:  R$  {"%.2f" %((kg_maca_ate_5*kilos_de_maca)-((kg_maca_ate_5*kilos_de_maca)*desconto))}''')
         return
 
     if 5 >= kilos_de_morango > 0 and 5 >= kilos_de_maca > 0:
-        print(f'''(+)  Morango  - valor:  R$ {"%.2f" %(kg_moranga_ate_5*kilos_de_morango)} - quantidade:  {kilos_de_morango} kg - preço: R$ 2.50/kg
-(+)  Maça     - valor:  R$ {"%.2f" %(kg_maca_ate_5*kilos_de_maca)} - quantidade:  {kilos_de_maca} kg - preço: R$ 1.80/kg
+        print(f'''(+)  Morango  - valor:  R$  {"%.2f" %(kg_moranga_ate_5*kilos_de_morango)} - quantidade:  {kilos_de_morango} kg - preço: R$ 2.50/kg
+(+)  Maça     - valor:  R$  {"%.2f" %(kg_maca_ate_5*kilos_de_maca)} - quantidade:  {kilos_de_maca} kg - preço: R$ 1.80/kg
 (-)  Desconto - valor:  R$  {"%.2f" %(desconto*((kg_moranga_ate_5*kilos_de_morango)+(kg_maca_ate_5*kilos_de_maca)))}
-          Valor Total:  R$ {"%.2f" %(((kg_moranga_ate_5*kilos_de_morango)-((kg_moranga_ate_5*kilos_de_morango)*desconto))+(((kg_maca_ate_5*kilos_de_maca)-((kg_maca_ate_5*kilos_de_maca)*desconto))))}''')
+          Valor Total:  R$  {("%.2f" %(((kg_moranga_ate_5*kilos_de_morango)-((kg_moranga_ate_5*kilos_de_morango)*desconto))+(((kg_maca_ate_5*kilos_de_maca)-((kg_maca_ate_5*kilos_de_maca)*desconto)))))}''')
         return
 
 
     if kilos_de_morango > 5 and kilos_de_maca == 0:
-        print(f'''(+)  Morango  - valor:  R$  {"%.2f" %(kg_moranga_mais*kilos_de_morango)} - quantidade:  {kilos_de_morango} kg - preço: R$ 2.20/kg
+        print(f'''(+)  Morango  - valor:  R$ {"%.2f" %(kg_moranga_mais*kilos_de_morango)} - quantidade:  {kilos_de_morango} kg - preço: R$ 2.20/kg
 (-)  Desconto - valor:  R$  {"%.2f" %(desconto*(kg_moranga_mais*kilos_de_morango))}
-          Valor Total:  R$  {"%.2f" %((kg_moranga_mais*kilos_de_morango)-((kg_moranga_mais*kilos_de_morango)*desconto))}''')
+          Valor Total:  R$ {"%.2f" %((kg_moranga_mais*kilos_de_morango)-((kg_moranga_mais*kilos_de_morango)*desconto))}''')
         return
     
     if kilos_de_morango == 0 and kilos_de_maca > 5:
-        print(f'''(+)  Maça     - valor:  R$ {"%.2f" %(kg_maca_mais*kilos_de_maca)} - quantidade:  {kilos_de_maca} kg - preço: R$ 1.50/kg
-(-)  Desconto - valor:  R$  {"%.2f" %(desconto*(kg_maca_mais*kilos_de_maca))}
-          Valor Total:  R$ {"%.2f" %((kg_maca_mais*kilos_de_maca)-((kg_maca_mais*kilos_de_maca)*desconto))}''')
+        print(f'''(+)  Maça     - valor:  R${("%.2f" %(kg_maca_mais*kilos_de_maca)).rjust(6)} - quantidade:  {kilos_de_maca} kg - preço: R$ 1.50/kg
+(-)  Desconto - valor:  R${("%.2f" %(desconto*(kg_maca_mais*kilos_de_maca))).rjust(6)}
+          Valor Total:  R${("%.2f" %((kg_maca_mais*kilos_de_maca)-((kg_maca_mais*kilos_de_maca)*desconto))).rjust(6)}''')
         return
 
     if kilos_de_morango > 5 and kilos_de_maca > 5:
@@ -109,10 +109,10 @@ def calcular_preco_da_compra(kilos_de_morango: int, kilos_de_maca: int):
 
     
     if kilos_de_morango > 5 and 0 < kilos_de_maca <= 5:
-        print(f'''(+)  Morango  - valor:  R$  {"%.2f" %(kg_moranga_mais*kilos_de_morango)} - quantidade:  {kilos_de_morango} kg - preço: R$ 2.20/kg
-(+)  Maça     - valor:  R$ {"%.2f" %(kg_maca_ate_5*kilos_de_maca)} - quantidade:  {kilos_de_maca} kg - preço: R$ 1.80/kg
+        print(f'''(+)  Morango  - valor:  R$ {"%.2f" %(kg_moranga_mais*kilos_de_morango)} - quantidade:  {kilos_de_morango} kg - preço: R$ 2.20/kg
+(+)  Maça     - valor:  R$  {"%.2f" %(kg_maca_ate_5*kilos_de_maca)} - quantidade:  {kilos_de_maca} kg - preço: R$ 1.80/kg
 (-)  Desconto - valor:  R$  {"%.2f" %(desconto*((kg_moranga_mais*kilos_de_morango)+(kg_maca_ate_5*kilos_de_maca)))}
-          Valor Total:  R$  {"%.2f" %(((kg_moranga_mais*kilos_de_morango)-((kg_moranga_mais*kilos_de_morango)*desconto))+(((kg_maca_ate_5*kilos_de_maca)-((kg_maca_ate_5*kilos_de_maca)*desconto))))}''')
+          Valor Total:  R$ {"%.2f" %(((kg_moranga_mais*kilos_de_morango)-((kg_moranga_mais*kilos_de_morango)*desconto))+(((kg_maca_ate_5*kilos_de_maca)-((kg_maca_ate_5*kilos_de_maca)*desconto))))}''')
         return
     
     if 0 < kilos_de_morango <= 5 and kilos_de_maca > 5:
