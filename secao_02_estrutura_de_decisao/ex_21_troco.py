@@ -499,5 +499,3 @@ def calcular_troco(valor: int) -> str:
     if centena > 1 and dezena > 6 and unidade > 6:
         print(f"'{contador_de_100} notas de R$ 100, 1 nota de R$ 50, {contador_de_10} notas de R$ 10, 1 nota de R$ 5 e {contador_de_1} notas de R$ 1'")
         return
-
-calcular_troco(985)
