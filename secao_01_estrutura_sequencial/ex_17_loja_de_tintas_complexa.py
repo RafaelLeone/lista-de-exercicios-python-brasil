@@ -27,26 +27,50 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 
 """
 
+from math import ceil
+
 
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
     tamanho_parede = float(input('Informar valor do tamanho da área a ser pintada em metros quadrados: '))
-    litros_necessarios = round(((tamanho_parede/6)*1.1) +0.5)
-    latas_necessarias = round((litros_necessarios/18) +0.5) #80
-    galoes_necessarios = round((litros_necessarios/3.6) +0.5) #25
-    latas_menor = round((litros_necessarios/18) - 0.5)
-    galoes_menor = 0
-    if 0 < (litros_necessarios%18) < 10.9:
-        galoes_menor = int(litros_necessarios%18)
-    if (litros_necessarios%18) > 10.9:
-        latas_menor += 1
-    if litros_necessarios <= 18:
-        sobrar = 18-(litros_necessarios%18)
-    if litros_necessarios > 18:
-        sobrar = 18-(litros_necessarios%18 - galoes_menor*3.6)
+    litros_necessarios = ceil((tamanho_parede/6)*1.1)
+    latas_necessarias = ceil(litros_necessarios/18) #80
+    galoes_necessarios = ceil(litros_necessarios/3.6) #25
 
+    galao = 3.6
+    lata = 18
+    sobrar = 0
+    
+    if litros_necessarios <= galao:
+        galoes_menor = 1
+        sobrar = (galoes_menor*galao)%litros_necessarios
+    if galao < litros_necessarios <= (2*galao):
+        galoes_menor = 2
+        sobrar = (galoes_menor*galao)%litros_necessarios
+    if (2*galao) < litros_necessarios <= lata:
+        latas_menor = 1
+        sobrar = (latas_menor*lata)%litros_necessarios
+    if lata < litros_necessarios <= (lata + galao):
+        latas_menor = 1
+        galoes_menor = 1
+        sobrar = ((latas_menor*lata)+(galoes_menor*galao))%litros_necessarios
+    if (lata + galao) < litros_necessarios <= (lata + (2*galao)):
+        latas_menor = 1
+        galoes_menor = 2
+        sobrar = ((latas_menor*lata)+(galoes_menor*galao))%litros_necessarios
+    if (lata + (2*galao)) < litros_necessarios < (2*lata):
+        latas_menor = 2
+        sobrar = (latas_menor*lata)%litros_necessarios
+    if (2*lata) < litros_necessarios < ((2*lata)+galao):
+        latas_menor = 2
+        galoes_menor = 1
+        sobrar = ((latas_menor*lata)+(galoes_menor*galao))%litros_necessarios
+    if ((2*lata)+galao) < litros_necessarios < ((2*lata)+(2*galao)):
+        latas_menor = 2
+        galoes_menor = 2
+        sobrar = ((latas_menor*lata)+(galoes_menor*galao))%litros_necessarios
 
     print(f'''Você deve comprar {int(litros_necessarios + 0.5)} litros de tinta.
 Você pode comprar {latas_necessarias} lata(s) de 18 litros a um custo de R$ {80*latas_necessarias}. Vão sobrar {"%.1f" %(((latas_necessarias*18) - litros_necessarios))} litro(s) de tinta.
 Você pode comprar {galoes_necessarios} lata(s) de 3.6 litros a um custo de R$ {25*galoes_necessarios}. Vão sobrar {"%.1f" %(((galoes_necessarios*3.6) - litros_necessarios))} litro(s) de tinta.
-Para menor custo, você pode comprar {latas_menor} lata(s) de 18 litros e {galoes_menor} galão(ões) de 3.6 litros a um custo de R$ {((latas_menor)*80) + (galoes_menor*25)}. Vão sobrar {sobrar} litro(s) de tinta.''')
+Para menor custo, você pode comprar {latas_menor} lata(s) de 18 litros e {galoes_menor} galão(ões) de 3.6 litros a um custo de R$ {((latas_menor)*80) + (galoes_menor*25)}. Vão sobrar {"%.1f" %sobrar} litro(s) de tinta.''')
