@@ -37,6 +37,8 @@ def calcular_latas_e_preco_de_tinta():
     latas_necessarias = ceil(litros_necessarios/18) #80
     galoes_necessarios = ceil(litros_necessarios/3.6) #25
 
+    galoes_menor = 0
+    latas_menor = 0
     galao = 3.6
     lata = 18
     sobrar = 0
