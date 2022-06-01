@@ -47,3 +47,32 @@ Mostre o restultado com duas casas decimais
 
 def calcular_preco_da_carne(tipo_de_carne: str, kilos_de_carne: int, forma_de_pagamento: str) -> str:
     """Escreva aqui em baixo a sua solução"""
+
+    if tipo_de_carne == 'Filé Duplo':
+        if kilos_de_carne <= 5:
+            preco_do_kilo = 4.9
+            preco_da_carne = 4.9*kilos_de_carne
+        if kilos_de_carne > 5:
+            preco_do_kilo = 5.8
+            preco_da_carne = 5.8*kilos_de_carne
+
+    if tipo_de_carne == 'Alcatra':
+        if kilos_de_carne <= 5:
+            preco_do_kilo = 5.9
+            preco_da_carne = 5.9*kilos_de_carne
+        if kilos_de_carne > 5:
+            preco_do_kilo = 6.8
+            preco_da_carne = 6.8*kilos_de_carne
+
+    if tipo_de_carne == 'Picanha':
+        if kilos_de_carne <= 5:
+            preco_do_kilo = 6.9
+            preco_da_carne = 6.9*kilos_de_carne
+        if kilos_de_carne > 5:
+            preco_do_kilo = 7.8
+            preco_da_carne = 7.8*kilos_de_carne
+
+    if forma_de_pagamento != 'cartão tabajara':
+        print(f"""'{kilos_de_carne} kg de {tipo_de_carne} a R$ {"%.2f" %preco_do_kilo}/kg saem a R$ {"%.2f" %preco_da_carne}. Não há desconto, pagamento feito com {forma_de_pagamento}'""")
+    else:
+        print(f"""'{kilos_de_carne} kg de {tipo_de_carne} a R$ {"%.2f" %preco_do_kilo}/kg saem a R$ {"%.2f" %preco_da_carne}. Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {"%.2f" %(preco_da_carne-(preco_da_carne*0.05))}'""")
