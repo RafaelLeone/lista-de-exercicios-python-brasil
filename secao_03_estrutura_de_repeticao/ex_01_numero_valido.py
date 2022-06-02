@@ -37,11 +37,12 @@ def obter_numero_valido():
     var = int(input('Escreva um número inteiro de 0 a 10: '))
     lis = []
     while 0 > var or var > 10:
-        text ='Número inválido:\n'
+        text ='Número inválido:'
         lis.append(text)
-        print(*lis, sep='')
+        print(*lis, sep='\n')
         var = int(input('Escreva um número inteiro de 0 a 10: '))
 
+    print(*lis, sep='\n')
     print(var)
 
 obter_numero_valido()
