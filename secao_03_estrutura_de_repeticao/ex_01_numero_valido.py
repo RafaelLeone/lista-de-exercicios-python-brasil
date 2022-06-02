@@ -34,3 +34,14 @@ até que o usuário informe um valor válido.
 
 def obter_numero_valido():
     """Escreva aqui em baixo a sua solução"""
+    var = int(input('Escreva um número inteiro de 0 a 10: '))
+    lis = []
+    while 0 > var or var > 10:
+        text ='Número inválido:\n'
+        lis.append(text)
+        print(*lis, sep='')
+        var = int(input('Escreva um número inteiro de 0 a 10: '))
+
+    print(var)
+
+obter_numero_valido()
