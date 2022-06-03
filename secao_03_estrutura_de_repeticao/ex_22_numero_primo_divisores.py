@@ -50,3 +50,23 @@ divisível.
 
 def eh_primo(n: int) -> bool:
     """Escreva aqui em baixo a sua solução"""
+    i = n-1
+    lista = []
+    lista2 = []
+    if n == 0:
+        return False
+    if n == 1:
+        return False
+    while i > 1:
+        lista.append(n%i)
+        if n%i == 0:
+            lista2.append(i)
+        i -= 1
+    if 0 in lista:
+        lista2.reverse()
+        for index in range(len(lista2)):
+            num = lista2[index]
+            print(f'É divisível por {num}')
+        print('False')
+    else:
+        return True
