@@ -43,4 +43,21 @@ from typing import Tuple
 
 def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
     """Escreva aqui em baixo a sua solução"""
-    return '', 0
+    if n <= 1:
+        return '', 0
+    lista = []
+    lista2 = []
+    i = n-1
+    while n > 1:
+        while i > 1:
+            lista.append(n%i)
+            i -= 1
+        if 0 not in lista:
+            lista2.append(n)
+        n -= 1
+        i = n-1
+        lista = []
+    lista2.reverse()
+    print(lista2)
+calcular_primos_e_divisoes(2) 
+
