@@ -32,23 +32,31 @@ def calcular_estatisticas(*cidades):
     lista_veiculos = []
     lista_acidentes = []
     media = []
+
+    maior_acidentes = 0
+    maior_cidade = ''
+    menor_acidentes = 1_000_000
+    menor_cidade = ''
+
+    media_veiculos = 0
+
     for i in range(len(cidades)):
         lista_cidades.append(cidades[i][0])
         lista_veiculos.append(cidades[i][1])
         lista_acidentes.append(cidades[i][2])
-        media.append("%.1f" %((lista_acidentes[i]/lista_veiculos[i])*1_000))
-    print(media)
-    # for i in range(len(dicio)):
-    #     if int(value_lis[i]) > int(maiorn):
-    #         maiorn = value_lis[i]
-    #         maioralu = key_lis[i]
-    #     if int(value_lis[i]) < int(menorn):
-    #         menorn = value_lis[i]
-    #         menoralu = key_lis[i]
+        media.append((lista_acidentes[i]/lista_veiculos[i])*1_000)
+
+    for i in range(len(cidades)):
+        if float(media[i]) > float(maior_acidentes):
+            maior_cidade = lista_cidades[i]
+            maior_acidentes = media[i]
+        if float(media[i]) < float(menor_acidentes):
+            menor_cidade = lista_cidades[i]
+            menor_acidentes = media[i]
 
 
 
-    print(f'''O maior índice de acidentes é de FL, com 6.0 acidentes por mil habitantes.
-O menor índice de acidentes é de FZ, com 1.2 acidentes por mil habitantes.
-O média de veículos por cidade é de 548000.
+    print(f'''O maior índice de acidentes é de {maior_cidade}, com {"%.1f" %maior_acidentes} acidentes por mil habitantes.
+O menor índice de acidentes é de {menor_cidade}, com {"%.1f" %menor_acidentes} acidentes por mil habitantes.
+O média de veículos por cidade é de {media_veiculos}.
 A média de acidentes total nas cidades com menos de 150 mil habitantes é de 900.0 acidentes.''')
