@@ -42,5 +42,42 @@ da média das alturas e dos pesos dos clientes
 """
 
 
+from time import altzone
+
+
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""
+    inputs = []
+    while True:
+        inp = input("Type Anything/ Press Enter: ")
+        if inp == "0":
+            break
+        inputs.append(inp)
+    nome_alto = ''
+    nome_baixo = ''
+    nome_magro = ''
+    nome_gordo = ''
+    alto = 0
+    baixo = 1_000
+    magro = 1_000
+    gordo = 0
+    while len(inputs) > 0:
+        if int(inputs[1]) > int(alto):
+            alto = inputs[1]
+            nome_alto = inputs[0]
+        if int(inputs[1]) < int(baixo):
+            baixo = inputs[1]
+            nome_baixo = inputs[0]
+        if int(inputs[2]) > int(gordo):
+            gordo = inputs[2]
+            nome_gordo = inputs[0]
+        if int(inputs[2]) < int(magro):
+            magro = inputs[2]
+            nome_magro = inputs[0]
+        inputs.pop(0)
+        inputs.pop(0)
+        inputs.pop(0)
+    print(f'''Cliente mais alto: {nome_alto}, com {alto} centímetros
+Cliente mais baixo: {nome_baixo}, com {baixo} centímetros
+Cliente mais magro: {nome_magro}, com {magro} kilos
+Cliente mais gordo: {nome_gordo}, com {gordo} kilos''')
