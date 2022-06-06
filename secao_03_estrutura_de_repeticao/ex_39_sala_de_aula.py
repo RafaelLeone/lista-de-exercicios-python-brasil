@@ -17,3 +17,19 @@ representando a sua altura em centímetros. Encontre o aluno mais alto e o mais 
 
 def calcular_aluno_mais_baixo_e_mais_alto(*alunos) -> str:
     """Escreva aqui em baixo a sua solução"""
+    dicio = dict(alunos)
+    key_lis = list(dicio.keys())
+    value_lis = list(dicio.values())
+    maiorn = 0
+    maioralu = ''
+    menorn = 1_000
+    menoralu = ''
+    for i in range(len(dicio)):
+        if int(value_lis[i]) > int(maiorn):
+            maiorn = value_lis[i]
+            maioralu = key_lis[i]
+        if int(value_lis[i]) < int(menorn):
+            menorn = value_lis[i]
+            menoralu = key_lis[i]
+
+    return f'''O maior aluno é o {maioralu} com {maiorn} cm. O menor aluno é o {menoralu} com {menorn} cm'''
