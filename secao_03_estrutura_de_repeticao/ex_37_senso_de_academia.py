@@ -53,18 +53,31 @@ da média das alturas e dos pesos dos clientes
 
 """
 
-
+from statistics import mean
 from time import altzone
 
 
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""
+    contador = 1
+    lista_altura = []
+    lista_peso = []
+
     inputs = []
     while True:
         inp = input("Type Anything/ Press Enter: ")
         if inp == "0":
             break
         inputs.append(inp)
+
+    while contador <= len(inputs):
+        lista_altura.append(int(inputs[contador]))
+        lista_peso.append(int(inputs[contador+1]))
+        contador += 3
+
+    media_altura = mean(lista_altura)
+    media_peso = mean(lista_peso)
+
     nome_alto = ''
     nome_baixo = ''
     nome_magro = ''
@@ -89,7 +102,11 @@ def rodar_senso():
         inputs.pop(0)
         inputs.pop(0)
         inputs.pop(0)
+
     print(f'''Cliente mais alto: {nome_alto}, com {alto} centímetros
 Cliente mais baixo: {nome_baixo}, com {baixo} centímetros
 Cliente mais magro: {nome_magro}, com {magro} kilos
-Cliente mais gordo: {nome_gordo}, com {gordo} kilos''')
+Cliente mais gordo: {nome_gordo}, com {gordo} kilos
+--------------------------------------------------
+Media de altura dos clientes: {"%.1f" %media_altura} centímetros
+Media de peso dos clientes: {"%.1f" %media_peso} kilos''')
