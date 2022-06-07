@@ -46,6 +46,7 @@ def listar_numeros_para_avaliacao():
 
     lista_contador = []
     contador = 0
+    j = 0
 
     inputs = []
     while True:
@@ -56,8 +57,13 @@ def listar_numeros_para_avaliacao():
 
     for key, value in dicio.items():
         for i in inputs:
-            while inputs[contador] < value:
+            while contador < len(inputs) and inputs[contador] < value:
                 contador += 1
-            lista_contador.append(contador)
-            contador = 0
-        print(f'''{contador} número(s) entre o intervalo de {key}''')
+        lista_contador.append(contador)
+        if contador == 0:
+            break
+        contador = 0
+        if lista_contador[j] > 0:
+            print(f'''{lista_contador[j]} número(s) entre o intervalo de {key}''')
+            print(lista_contador)
+        j += 1
