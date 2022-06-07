@@ -40,3 +40,24 @@ A entrada de dados deverá terminar quando for lido um número negativo.
 
 def listar_numeros_para_avaliacao():
     """Escreva aqui em baixo a sua solução"""
+    dicio = {
+        'zero a 25' : 25, '26 a 50' : 50, '51 a 75' : 75, '76 a 100' : 100
+    }
+
+    lista_contador = []
+    contador = 0
+
+    inputs = []
+    while True:
+        inp = input("Type Anything/ Press Enter: ")
+        if inp < 0:
+            break
+        inputs.append(inp)
+
+    for key, value in dicio.items():
+        for i in inputs:
+            while inputs[contador] < value:
+                contador += 1
+            lista_contador.append(contador)
+            contador = 0
+        print(f'''{contador} número(s) entre o intervalo de {key}''')
