@@ -39,6 +39,7 @@ def gerar_dados_de_financiamente(valor_inicial: float):
     for i in range(4):
         novo_valor = valor_inicial + valor_inicial*juros
         nova_parcela = novo_valor/parcelas
+        # if apenas para questão de espaçamento nos testes:
         if parcelas < 10:
             print(f'''R$ {"%.2f" %novo_valor}      {"%.0f" %(juros*100)}%             {parcelas}                       R$   {str("%.2f" %nova_parcela).rjust(7)}''')
         else:
