@@ -40,32 +40,31 @@ A entrada de dados deverá terminar quando for lido um número negativo.
 
 def listar_numeros_para_avaliacao():
     """Escreva aqui em baixo a sua solução"""
-    dicio = {
-        'zero a 25' : 25, '26 a 50' : 50, '51 a 75' : 75, '76 a 100' : 100
-    }
-
-    valor = 0
-    lista_quantidades = []
+    dicio = {'zero a 25' : 25, '26 a 50': 50, '51 a 75': 75, '76 a 100': 100}
+    lista_chaves = []
+    lista_valores = []
+    lista_chaves = list(dicio.keys())
+    lista_valores = list(dicio.values())
 
     inputs = []
     while True:
-        inp = input("Type Anything/ Press Enter: ")
-        if inp < 0:
+        inpu = input("Type Anything/ Press Enter: ")
+        if inpu < 0:
             break
-        inputs.append(inp)
+        inputs.append(inpu)
 
-   
-    for i in range(len(inputs)):
-        while i < len(inputs) and inputs[i] == i+1:
-            i += 1
-            valor += 1
-        lista_quantidades.append(valor)
-        valor = 0
-        print(f'O número {i + 1} caiu {lista_quantidades[i]} vezes')
-        i += 1
-
-
-    # for index in dicio:
-    #     numero = numeros[index]
-    #     if numero > 0:
-    #         print(f'{numero} número(s) entre o intervalo de {lista_keys[i]}')
+    lista_inputs = []
+    lista_inputs = sorted(inputs)
+    j = 0
+    soma = 0
+    
+    for i in range(len(dicio)):
+        maior = lista_valores[i]
+        while j < len(lista_inputs) and lista_inputs[j] <= maior:
+            soma += 1
+            j += 1
+        
+        intervalo = lista_chaves[i]
+        if soma > 0:
+            print(f'{soma} número(s) entre o intervalo de {intervalo}')
+        soma = 0
