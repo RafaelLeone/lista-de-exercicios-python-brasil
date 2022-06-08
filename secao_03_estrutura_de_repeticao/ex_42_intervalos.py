@@ -44,9 +44,8 @@ def listar_numeros_para_avaliacao():
         'zero a 25' : 25, '26 a 50' : 50, '51 a 75' : 75, '76 a 100' : 100
     }
 
-    lista_contador = []
-    contador = 0
-    j = 0
+    valor = 0
+    lista_quantidades = []
 
     inputs = []
     while True:
@@ -55,15 +54,18 @@ def listar_numeros_para_avaliacao():
             break
         inputs.append(inp)
 
-    for key, value in dicio.items():
-        for i in inputs:
-            while contador < len(inputs) and inputs[contador] < value:
-                contador += 1
-        lista_contador.append(contador)
-        if contador == 0:
-            break
-        contador = 0
-        if lista_contador[j] > 0:
-            print(f'''{lista_contador[j]} número(s) entre o intervalo de {key}''')
-            print(lista_contador)
-        j += 1
+   
+    for i in range(len(inputs)):
+        while i < len(inputs) and inputs[i] == i+1:
+            i += 1
+            valor += 1
+        lista_quantidades.append(valor)
+        valor = 0
+        print(f'O número {i + 1} caiu {lista_quantidades[i]} vezes')
+        i += 1
+
+
+    # for index in dicio:
+    #     numero = numeros[index]
+    #     if numero > 0:
+    #         print(f'{numero} número(s) entre o intervalo de {lista_keys[i]}')
