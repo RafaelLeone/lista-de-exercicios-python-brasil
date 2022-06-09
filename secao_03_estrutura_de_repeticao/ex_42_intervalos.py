@@ -41,8 +41,6 @@ A entrada de dados deverá terminar quando for lido um número negativo.
 def listar_numeros_para_avaliacao():
     """Escreva aqui em baixo a sua solução"""
     dicio = {'zero a 25' : 25, '26 a 50': 50, '51 a 75': 75, '76 a 100': 100}
-    lista_chaves = []
-    lista_valores = []
     lista_chaves = list(dicio.keys())
     lista_valores = list(dicio.values())
 

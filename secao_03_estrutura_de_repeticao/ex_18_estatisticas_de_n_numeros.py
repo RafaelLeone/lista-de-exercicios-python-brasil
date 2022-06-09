@@ -26,7 +26,7 @@ def calcular_estatisticas(*numeros) -> str:
     for numero in numeros:
         lista.append(numero)
         i += 1
-    for index in range(0, len(lista)):
+    for index in range(len(lista)):
         sum += lista[index]
     lista.sort()
     maior = lista[-1]
