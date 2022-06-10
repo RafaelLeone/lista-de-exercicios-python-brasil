@@ -54,7 +54,6 @@ da média das alturas e dos pesos dos clientes
 """
 
 from statistics import mean
-from time import altzone
 
 
 def rodar_senso():
@@ -78,10 +77,6 @@ def rodar_senso():
     media_altura = mean(lista_altura)
     media_peso = mean(lista_peso)
 
-    nome_alto = ''
-    nome_baixo = ''
-    nome_magro = ''
-    nome_gordo = ''
     alto = 0
     baixo = 1_000
     magro = 1_000

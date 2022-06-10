@@ -90,3 +90,27 @@ from collections import Counter
 
 def apurar_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+    dicio = dict(Counter(votos))
+    y = len(dicio)
+    while y < 6:
+        dicio[y+1] = 0
+        y += 1
+
+    dicio_nomes = { 1 : 'Bostonaro', 2 : 'Luladrão', 3 : 'Dilmanta', 4 : 'FHC Isentão', 5 : 'Votos Nulos', 6 : 'Votos Brancos',}
+    lista_nomes = list(dicio_nomes.values())
+    i = 0
+
+    votos_por_candidato = list(dicio.values())
+    total_de_votos = sum(votos_por_candidato)
+
+    x = 100/total_de_votos
+
+    print(f'Código do Candidato Nome do Candidato Votos Porcentagem sobre total')
+    for candidato, quantidade_de_votos in dicio.items():
+        nome = lista_nomes[i]
+        votos = votos_por_candidato[i]
+        porcento = str(round((votos * x),1))
+        print(f'{candidato}                   {nome.ljust(18)}{quantidade_de_votos}{porcento.rjust(10)}%')
+        i += 1
+        if i == 4:
+            print(f'-------------------------------------------------------------------')
