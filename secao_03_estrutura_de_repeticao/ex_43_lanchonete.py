@@ -129,8 +129,8 @@ def fechar_conta(*itens):
     print('| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
     
     for i in range(len(itens_aux)):
-        while x < len(itens_aux) and itens[x][0] == str(codigo):
-            soma += itens [x][1]
+        while x < len(itens_aux) and itens_aux[x][0] == str(codigo):
+            soma += itens_aux[x][1]
             x += 1
         produto = str(lista_chaves[i])
         preco = lista_valores[i]
