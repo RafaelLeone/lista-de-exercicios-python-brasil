@@ -118,7 +118,6 @@ def fechar_conta(*itens):
     codigo = 100
     soma = 0
 
-    j = 0
     x = 0
 
     lista_de_somas = []
@@ -133,18 +132,15 @@ def fechar_conta(*itens):
         while x < len(itens_aux) and itens[x][0] == str(codigo):
             soma += itens [x][1]
             x += 1
-        else:
-            produto = str(lista_chaves[j])
-            preco = lista_valores[j]
-            total = preco * soma
-            lista_de_totais.append(total)
-            if soma > 0:
-                print(f'| {produto.ljust(17)}| {codigo}    | {"%.2f" %preco}                |          {soma} |       {"%.2f" %total} |')
-            codigo += 1
-            i -= 1
-            j += 1
-            lista_de_somas.append(soma)
-            soma = 0
+        produto = str(lista_chaves[i])
+        preco = lista_valores[i]
+        total = preco * soma
+        lista_de_totais.append(total)
+        if soma > 0:
+            print(f'| {produto.ljust(17)}| {codigo}    | {"%.2f" %preco}                |          {soma} |       {"%.2f" %total} |')
+        codigo += 1
+        lista_de_somas.append(soma)
+        soma = 0
     
     soma_total = str(sum(lista_de_somas))
     total_total = str("%.2f" %(sum(lista_de_totais)))
