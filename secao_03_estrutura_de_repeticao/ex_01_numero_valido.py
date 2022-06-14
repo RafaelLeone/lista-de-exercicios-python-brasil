@@ -40,3 +40,5 @@ def obter_numero_valido():
         print(f'Número inválido: {var}')
         var = input('Escreva um número inteiro de 0 a 10: ')
     print(var)
+
+    
