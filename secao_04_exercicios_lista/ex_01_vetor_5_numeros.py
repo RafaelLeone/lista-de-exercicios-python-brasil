@@ -21,3 +21,13 @@ def ler_5_valores():
 
 ler_5_valores()
 
+
+# Resolução do ex2:
+#     lista = []
+    
+#     for i in range(10):
+#         numero = float(input('Digite: '))
+#         lista.append(numero)
+
+#     lista.reverse()
+#     print(lista)
