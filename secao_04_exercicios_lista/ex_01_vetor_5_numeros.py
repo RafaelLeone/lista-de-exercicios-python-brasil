@@ -11,4 +11,13 @@ Faça um Programa que leia um vetor de 5 números inteiros e mostre-os.
 
 def ler_5_valores():
     """Escreva aqui em baixo a sua solução"""
+    lista = []
+    
+    for i in range(5):
+        numero = float(input('Digite: '))
+        lista.append(numero)
+
+    print(lista)
+
+ler_5_valores()
 
