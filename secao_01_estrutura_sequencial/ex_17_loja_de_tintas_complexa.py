@@ -27,7 +27,7 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 
 """
 
-from math import ceil
+from math import ceil, floor
 
 
 def calcular_latas_e_preco_de_tinta():
