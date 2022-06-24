@@ -32,47 +32,31 @@ from math import ceil
 
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
-    tamanho_parede = float(input('Informar valor do tamanho da área a ser pintada em metros quadrados: '))
-    litros_necessarios = ceil((tamanho_parede/6)*1.1)
-    latas_necessarias = ceil(litros_necessarios/18) #80
-    galoes_necessarios = ceil(litros_necessarios/3.6) #25
+    tamanho_parede = int(input('Digite: '))
+    parede_com_folga = tamanho_parede *1.1
+    tamanho_por_litro = 6
+    litros_necessarios = ceil(parede_com_folga/tamanho_por_litro)
+    print(f'Você deve comprar {litros_necessarios} litros de tinta.')
 
-    galoes_menor = 0
-    latas_menor = 0
-    galao = 3.6
-    lata = 18
-    sobrar = 0
-    
-    if litros_necessarios <= galao:
-        galoes_menor = 1
-        sobrar = (galoes_menor*galao)%litros_necessarios
-    if galao < litros_necessarios <= (2*galao):
-        galoes_menor = 2
-        sobrar = (galoes_menor*galao)%litros_necessarios
-    if (2*galao) < litros_necessarios <= lata:
-        latas_menor = 1
-        sobrar = (latas_menor*lata)%litros_necessarios
-    if lata < litros_necessarios <= (lata + galao):
-        latas_menor = 1
-        galoes_menor = 1
-        sobrar = ((latas_menor*lata)+(galoes_menor*galao))%litros_necessarios
-    if (lata + galao) < litros_necessarios <= (lata + (2*galao)):
-        latas_menor = 1
-        galoes_menor = 2
-        sobrar = ((latas_menor*lata)+(galoes_menor*galao))%litros_necessarios
-    if (lata + (2*galao)) < litros_necessarios < (2*lata):
-        latas_menor = 2
-        sobrar = (latas_menor*lata)%litros_necessarios
-    if (2*lata) < litros_necessarios < ((2*lata)+galao):
-        latas_menor = 2
-        galoes_menor = 1
-        sobrar = ((latas_menor*lata)+(galoes_menor*galao))%litros_necessarios
-    if ((2*lata)+galao) < litros_necessarios < ((2*lata)+(2*galao)):
-        latas_menor = 2
-        galoes_menor = 2
-        sobrar = ((latas_menor*lata)+(galoes_menor*galao))%litros_necessarios
+    preco_lata = 80
+    litros_em_lata = 18
+    latas_necessarias = ceil(litros_necessarios/litros_em_lata)
+    custo_latas = latas_necessarias * preco_lata
+    sobrar = (latas_necessarias*litros_em_lata) - litros_necessarios
+    print(f'Você pode comprar {latas_necessarias} lata(s) de {litros_em_lata} litros a um custo de R$ {custo_latas}. Vão sobrar {sobrar:.1f} litro(s) de tinta.')
 
-    print(f'''Você deve comprar {int(litros_necessarios + 0.5)} litros de tinta.
-Você pode comprar {latas_necessarias} lata(s) de 18 litros a um custo de R$ {80*latas_necessarias}. Vão sobrar {"%.1f" %(((latas_necessarias*18) - litros_necessarios))} litro(s) de tinta.
-Você pode comprar {galoes_necessarios} lata(s) de 3.6 litros a um custo de R$ {25*galoes_necessarios}. Vão sobrar {"%.1f" %(((galoes_necessarios*3.6) - litros_necessarios))} litro(s) de tinta.
-Para menor custo, você pode comprar {latas_menor} lata(s) de 18 litros e {galoes_menor} galão(ões) de 3.6 litros a um custo de R$ {((latas_menor)*80) + (galoes_menor*25)}. Vão sobrar {"%.1f" %sobrar} litro(s) de tinta.''')
+    preco_galao = 25
+    litros_em_galao = 3.6
+    galoes_necessarios = ceil(litros_necessarios/litros_em_galao)
+    custo_galoes = galoes_necessarios * preco_galao
+    sobrar = (galoes_necessarios*litros_em_galao) - litros_necessarios
+    print(f'Você pode comprar {galoes_necessarios} lata(s) de {litros_em_galao} litros a um custo de R$ {custo_galoes}. Vão sobrar {sobrar:.1f} litro(s) de tinta.')
+
+    latas_necessarias = floor(litros_necessarios/litros_em_lata)
+    custo_latas = latas_necessarias * preco_lata
+    resto = litros_necessarios % litros_em_lata
+    galoes_necessarios = ceil(resto/litros_em_galao)
+    custo_galoes = galoes_necessarios * preco_galao
+    custo_total = custo_latas + custo_galoes
+    sobrar = ((latas_necessarias*litros_em_lata) + (galoes_necessarios*litros_em_galao)) - litros_necessarios
+    print(f'Para menor custo, você pode comprar {latas_necessarias} lata(s) de {litros_em_lata} litros e {galoes_necessarios} galão(ões) de {litros_em_galao} litros a um custo de R$ {custo_total}. Vão sobrar {sobrar:.1f} litro(s) de tinta.')
