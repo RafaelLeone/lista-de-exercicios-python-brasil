@@ -31,3 +31,7 @@ ler_5_valores()
 
 #     lista.reverse()
 #     print(lista)
+
+#resolucao da 15 em outra branch
+
+#resolucao da 16 é o proximo video
