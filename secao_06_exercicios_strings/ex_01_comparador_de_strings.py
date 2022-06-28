@@ -45,10 +45,48 @@ def comparar(s1: str, s2: str):
     print(f'As duas strings possuem conteúdo {comparacao_de_conteudo}')
 
 #resolução ex02:
-    nome = "Renzo Nutela".upper()
-    letras_invertidas = ''.join(reversed(nome))
-    palavras_invertidas = ' '.join(reversed(nome.split()))
+    # nome = "Renzo Nutela".upper()
+    # letras_invertidas = ''.join(reversed(nome))
+    # palavras_invertidas = ' '.join(reversed(nome.split()))
 
-    print(f'Nome maiúsculo: {nome}')
-    print(f'Nome com letras invertidas: {letras_invertidas}')
-    print(f'Nome com palavras invertidas: {palavras_invertidas}')
+    # print(f'Nome maiúsculo: {nome}')
+    # print(f'Nome com letras invertidas: {letras_invertidas}')
+    # print(f'Nome com palavras invertidas: {palavras_invertidas}')
+
+#resolucao_forca:
+    # palavra_secreta = "Sapato".upper()
+    
+    # print('Jogo da Forca')
+    # print('Descubra a palavra')
+
+    # print('A palavra é ', end='')
+    # for letra in palavra_secreta:
+    #     print('_ ', end='')
+
+    # conjunto_de_letras_da_palavra_secreta = set(palavra_secreta)
+    # conjunto_de_letras_digitadas = set(letra_digitada)
+    # erros = 0
+
+    # while (not conjunto_de_letras_da_palavra_secreta.issubset(conjunto_de_letras_digitadas)) and erros < 7:
+    #     print()
+    #     print()
+    #     letra_digitada = input('Digite uma letra: ').upper()
+    #     conjunto_de_letras_digitadas.add(letra_digitada)
+    #     if letra_digitada in conjunto_de_letras_da_palavra_secreta:
+    #         print('A palavra é ', end='')
+    #         for letra in palavra_secreta:
+    #             if letra in conjunto_de_letras_digitadas:
+    #                 print(f'{letra} ', end='')
+    #             else:
+    #                 print('_ ', end='')
+    #     else:
+    #         erros += 1
+    #         print(f'Erro {erros} de 6. Tente de novo!')
+
+    #     print()
+    #     print(f'Letras já digitadas: ', conjunto_de_letras_digitadas)
+    
+    # if erros < 7:
+    #     print('Parabéns! Você venceu!')
+    # else:
+    #     print('Você perdeu :(')
