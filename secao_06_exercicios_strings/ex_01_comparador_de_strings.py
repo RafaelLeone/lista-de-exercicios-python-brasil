@@ -43,3 +43,12 @@ def comparar(s1: str, s2: str):
 
     print(f'As duas strings são de tamanhos {comparacao_de_tamanhos}')
     print(f'As duas strings possuem conteúdo {comparacao_de_conteudo}')
+
+#resolução ex02:
+    nome = "Renzo Nutela".upper()
+    letras_invertidas = ''.join(reversed(nome))
+    palavras_invertidas = ' '.join(reversed(nome.split()))
+
+    print(f'Nome maiúsculo: {nome}')
+    print(f'Nome com letras invertidas: {letras_invertidas}')
+    print(f'Nome com palavras invertidas: {palavras_invertidas}')
