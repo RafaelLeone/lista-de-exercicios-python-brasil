@@ -92,7 +92,7 @@ def comparar(s1: str, s2: str):
     #     print('Você perdeu :(')
 
 #resoluçao ex05:
-    string = 'Fulano'.upper()
-    while string != '':
-        print(string)
-        string = string[:-1]
+    # string = 'Fulano'.upper()
+    # while string != '':
+    #     print(string)
+    #     string = string[:-1]
