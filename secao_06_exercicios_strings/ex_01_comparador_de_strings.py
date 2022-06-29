@@ -90,3 +90,9 @@ def comparar(s1: str, s2: str):
     #     print('Parabéns! Você venceu!')
     # else:
     #     print('Você perdeu :(')
+
+#resoluçao ex05:
+    string = 'Fulano'.upper()
+    while string != '':
+        print(string)
+        string = string[:-1]
