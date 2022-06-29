@@ -50,5 +50,48 @@ Observando os termos no plural a colocação do "e", da vírgula entre outros. E
 """
 
 
+from ntpath import join
+
+
 def decompor_numero(numero: int):
     """Escreva aqui em baixo a sua solução"""
+    centenas_str = dezenas_str = unidades_str = ''
+    lista = []
+    valor = numero
+    if numero <= 0:
+        return 'O número precisa ser positivo'
+    if numero >= 1000:
+        return 'O número precisa ser menor que 1000'
+
+    centenas_int, valor = divmod(valor, 100)
+
+    if centenas_int == 1:
+        centenas_str = '1 centena'
+        lista.append(centenas_str)
+    if centenas_int > 1:
+        centenas_str = f'{centenas_int} centenas'
+        lista.append(centenas_str)
+
+    dezenas_int, valor = divmod(valor, 10)
+
+    if dezenas_int == 1:
+        dezenas_str = '1 dezena'
+        lista.append(dezenas_str)
+    if dezenas_int > 1:
+        dezenas_str = f'{dezenas_int} dezenas'
+        lista.append(dezenas_str)
+    
+    if valor == 1:
+        unidades_str = '1 unidade'
+        lista.append(unidades_str)
+    if valor > 1:
+        unidades_str = f'{valor} unidades'
+        lista.append(unidades_str)
+
+    texto = " e ".join(lista)
+
+    if len(lista) == 1 or len(lista) == 2:
+        return f'{numero} = {texto}'
+
+    if len(lista) == 3:
+        return f'{numero} = {centenas_str}, {dezenas_str} e {unidades_str}'

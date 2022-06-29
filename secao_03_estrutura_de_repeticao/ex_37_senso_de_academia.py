@@ -53,6 +53,55 @@ da média das alturas e dos pesos dos clientes
 
 """
 
+from statistics import mean
+
 
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""
+    contador = 1
+    lista_altura = []
+    lista_peso = []
+
+    inputs = []
+    while True:
+        inp = input("Type Anything/ Press Enter: ")
+        if inp == "0":
+            break
+        inputs.append(inp)
+
+    while contador <= len(inputs):
+        lista_altura.append(int(inputs[contador]))
+        lista_peso.append(int(inputs[contador+1]))
+        contador += 3
+
+    media_altura = mean(lista_altura)
+    media_peso = mean(lista_peso)
+
+    alto = 0
+    baixo = 1_000
+    magro = 1_000
+    gordo = 0
+    while len(inputs) > 0:
+        if int(inputs[1]) > int(alto):
+            alto = inputs[1]
+            nome_alto = inputs[0]
+        if int(inputs[1]) < int(baixo):
+            baixo = inputs[1]
+            nome_baixo = inputs[0]
+        if int(inputs[2]) > int(gordo):
+            gordo = inputs[2]
+            nome_gordo = inputs[0]
+        if int(inputs[2]) < int(magro):
+            magro = inputs[2]
+            nome_magro = inputs[0]
+        inputs.pop(0)
+        inputs.pop(0)
+        inputs.pop(0)
+
+    print(f'''Cliente mais alto: {nome_alto}, com {alto} centímetros
+Cliente mais baixo: {nome_baixo}, com {baixo} centímetros
+Cliente mais magro: {nome_magro}, com {magro} kilos
+Cliente mais gordo: {nome_gordo}, com {gordo} kilos
+--------------------------------------------------
+Media de altura dos clientes: {"%.1f" %media_altura} centímetros
+Media de peso dos clientes: {"%.1f" %media_peso} kilos''')

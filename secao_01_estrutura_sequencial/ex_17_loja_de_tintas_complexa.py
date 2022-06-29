@@ -27,6 +27,36 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 
 """
 
+from math import ceil, floor
+
 
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
+    tamanho_parede = int(input('Digite: '))
+    parede_com_folga = tamanho_parede *1.1
+    tamanho_por_litro = 6
+    litros_necessarios = ceil(parede_com_folga/tamanho_por_litro)
+    print(f'Você deve comprar {litros_necessarios} litros de tinta.')
+
+    preco_lata = 80
+    litros_em_lata = 18
+    latas_necessarias = ceil(litros_necessarios/litros_em_lata)
+    custo_latas = latas_necessarias * preco_lata
+    sobrar = (latas_necessarias*litros_em_lata) - litros_necessarios
+    print(f'Você pode comprar {latas_necessarias} lata(s) de {litros_em_lata} litros a um custo de R$ {custo_latas}. Vão sobrar {sobrar:.1f} litro(s) de tinta.')
+
+    preco_galao = 25
+    litros_em_galao = 3.6
+    galoes_necessarios = ceil(litros_necessarios/litros_em_galao)
+    custo_galoes = galoes_necessarios * preco_galao
+    sobrar = (galoes_necessarios*litros_em_galao) - litros_necessarios
+    print(f'Você pode comprar {galoes_necessarios} lata(s) de {litros_em_galao} litros a um custo de R$ {custo_galoes}. Vão sobrar {sobrar:.1f} litro(s) de tinta.')
+
+    latas_necessarias = floor(litros_necessarios/litros_em_lata)
+    custo_latas = latas_necessarias * preco_lata
+    resto = litros_necessarios % litros_em_lata
+    galoes_necessarios = ceil(resto/litros_em_galao)
+    custo_galoes = galoes_necessarios * preco_galao
+    custo_total = custo_latas + custo_galoes
+    sobrar = ((latas_necessarias*litros_em_lata) + (galoes_necessarios*litros_em_galao)) - litros_necessarios
+    print(f'Para menor custo, você pode comprar {latas_necessarias} lata(s) de {litros_em_lata} litros e {galoes_necessarios} galão(ões) de {litros_em_galao} litros a um custo de R$ {custo_total}. Vão sobrar {sobrar:.1f} litro(s) de tinta.')

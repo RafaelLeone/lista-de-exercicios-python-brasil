@@ -109,3 +109,41 @@ comprados.
 
 def fechar_conta(*itens):
     """Escreva aqui em baixo a sua solução"""
+    dicio = {
+        'Cachorro Quente' : 1.20, 'Bauru Simples' : 1.30, 'Bauru com Ovo' : 1.50, 'Hamburger' : 1.20, 'Cheeseburger' : 1.30, 'Refrigerante' : 1.00,
+    }
+    lista_chaves = list(dicio.keys())
+    lista_valores = list(dicio.values())
+    itens_aux = sorted(itens)
+    codigo = 100
+    soma = 0
+
+    x = 0
+
+    lista_de_somas = []
+    lista_de_totais = []
+    
+    print('_____________________________________________________________________________')
+    print('|                              RESUMO DA CONTA                              |')
+    print('|---------------------------------------------------------------------------|')
+    print('| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
+    
+    for i in range(len(itens_aux)):
+        while x < len(itens_aux) and itens_aux[x][0] == str(codigo):
+            soma += itens_aux[x][1]
+            x += 1
+        produto = str(lista_chaves[i])
+        preco = lista_valores[i]
+        total = preco * soma
+        lista_de_totais.append(total)
+        if soma > 0:
+            print(f'| {produto.ljust(17)}| {codigo}    | {"%.2f" %preco}                |          {soma} |       {"%.2f" %total} |')
+        codigo += 1
+        lista_de_somas.append(soma)
+        soma = 0
+    
+    soma_total = str(sum(lista_de_somas))
+    total_total = str("%.2f" %(sum(lista_de_totais)))
+    print('|---------------------------------------------------------------------------|')
+    print(f'| Total Geral:                                    |{soma_total.rjust(11)} |{total_total.rjust(11)} |')
+    print('-----------------------------------------------------------------------------')

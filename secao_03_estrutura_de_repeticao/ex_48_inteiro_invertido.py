@@ -21,3 +21,10 @@ Exemplo:
 
 def inverter_inteiro(numero):
     """Escreva aqui em baixo a sua solução"""
+    nova_lista = []
+    escrito = str(numero)
+
+    for i in range(len(escrito)):
+        nova_lista.append(escrito[-(i+1)])
+    
+    print(*nova_lista, end='', sep='')

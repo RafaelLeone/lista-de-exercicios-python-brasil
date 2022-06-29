@@ -56,3 +56,33 @@ para registrar a próxima compra.
 
 def rodar_programa_de_caixa():
     """Escreva aqui em baixo a sua solução"""
+    soma = 0
+    print("Lojas Tabajara")
+    valor = 0
+    lista = []
+    while valor > -2:
+        valor = float(input("Digite: "))
+        lista.append(valor)
+        soma += valor
+        if valor == 0:
+            valor = float(input("Digite: "))
+            print(f'''Total     : R${str("%.2f" %soma).rjust(7)}''')
+            print(f'''Dinheiro  : R${str("%.2f" %valor).rjust(7)}''')
+            print(f'''Troco     : R${str("%.2f" %(valor-soma)).rjust(7)}''')
+            print("-------------------")
+            print("Lojas Tabajara")
+            soma = 0
+        if valor == -1 and len(lista) > 1:
+            soma += 1
+            valor = float(input("Digite: "))
+            print(f'''Total     : R${str("%.2f" %soma).rjust(7)}''')
+            print(f'''Dinheiro  : R${str("%.2f" %valor).rjust(7)}''')
+            print(f'''Troco     : R${str("%.2f" %(valor-soma)).rjust(7)}''')
+            print("""-------------------
+Programa encerrado!""")
+            return
+        if valor == -1 and len(lista) <= 1:
+            print("""-------------------
+Programa encerrado!""")
+            return
+    

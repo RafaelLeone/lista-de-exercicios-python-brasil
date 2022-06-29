@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Pytest",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "${file}",
+        "--doctest-modules"
+      ],
+      "cwd": "${workspaceRoot}",
+      "justMyCode": true
+    },
+    {
+      "name": "Rodar Doctest",
+      "type": "python",
+      "request": "launch",
+      "module": "doctest",
+      "args": [
+        "${file}",
+        "-v"
+      ],
+      "cwd": "${workspaceRoot}",
+      "justMyCode": true
+    }
+
+  ]
+}

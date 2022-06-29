@@ -31,3 +31,150 @@ Mostre o restultado com duas casas decimais
 
 def fazer_operacao_e_classificar(n_1: float, n_2: float, operacao: str):
     """Escreva aqui em baixo a sua solução"""
+  # if round(result) == result:
+    #   intdec = 'inteiro'
+    # else:
+    #   intdec = 'decimal'
+
+
+    if (operacao == '+') and (round(n_1 + n_2) == (n_1 + n_2)):
+        result =  n_1 + n_2
+        intdec = 'inteiro'
+
+        if result%2 == 0:
+            par = 'par'
+        else:
+            par = 'impar'
+        
+        if result > 0:
+            pos = 'positivo'
+        elif result == 0:
+            pos = 'neutro'
+        else:
+            pos = 'negativo'
+        
+        print(f'''Resultado: {"%.2f" %result}
+Número é {par}, {pos} e {intdec}.''')
+        return
+
+    if operacao == '-' and (round(n_1 - n_2) == (n_1 - n_2)):
+      result =  n_1 - n_2
+      intdec = 'inteiro'
+
+      if result%2 == 0:
+        par = 'par'
+      else:
+        par = 'impar'
+      
+      if result > 0:
+        pos = 'positivo'
+      elif result == 0:
+        pos = 'neutro'
+      else:
+        pos = 'negativo'
+      
+      print(f'''Resultado: {"%.2f" %result}
+Número é {par}, {pos} e {intdec}.''')
+      return
+
+    if operacao == '/' and (round(n_1 / n_2) == (n_1 / n_2)):
+      result =  n_1 / n_2
+      intdec = 'inteiro'
+
+      if result%2 == 0:
+        par = 'par'
+      else:
+        par = 'impar'
+      
+      if result > 0:
+        pos = 'positivo'
+      elif result == 0:
+        pos = 'neutro'
+      else:
+        pos = 'negativo'
+      
+      print(f'''Resultado: {"%.2f" %result}
+Número é {par}, {pos} e {intdec}.''')
+      return
+
+    if operacao == '*' and (round(n_1 * n_2) == (n_1 * n_2)):
+      result =  n_1 * n_2
+      intdec = 'inteiro'
+
+      if result%2 == 0:
+        par = 'par'
+      else:
+        par = 'impar'
+      
+      if result > 0:
+        pos = 'positivo'
+      elif result == 0:
+        pos = 'neutro'
+      else:
+        pos = 'negativo'
+      
+      print(f'''Resultado: {"%.2f" %result}
+Número é {par}, {pos} e {intdec}.''')
+      return
+    
+
+    if operacao == '+' and round(n_1 + n_2) != n_1 + n_2:
+      result =  n_1 + n_2
+      intdec = 'decimal'
+
+      if result > 0:
+        pos = 'positivo'
+      elif result == 0:
+        pos = 'neutro'
+      else:
+        pos = 'negativo'
+      
+      print(f'''Resultado: {"%.2f" %result}
+Número é {pos} e {intdec}.''')
+      return
+
+    if operacao == '-' and round(n_1 - n_2) != n_1 - n_2:
+      result =  n_1 - n_2
+      intdec = 'decimal'
+
+      if result > 0:
+        pos = 'positivo'
+      elif result == 0:
+        pos = 'neutro'
+      else:
+        pos = 'negativo'
+      
+      print(f'''Resultado: {"%.2f" %result}
+Número é {pos} e {intdec}.''')
+      return
+
+    if operacao == '/' and round(n_1 / n_2) != n_1 / n_2:
+      result =  n_1 / n_2
+      intdec = 'decimal'
+
+      if result > 0:
+        pos = 'positivo'
+      elif result == 0:
+        pos = 'neutro'
+      else:
+        pos = 'negativo'
+      
+      print(f'''Resultado: {"%.2f" %result}
+Número é {pos} e {intdec}.''')
+      return
+
+    if operacao == '*' and round(n_1 * n_2) != n_1 * n_2:
+      result =  n_1 * n_2
+      intdec = 'decimal'
+
+      if result > 0:
+        pos = 'positivo'
+      elif result == 0:
+        pos = 'neutro'
+      else:
+        pos = 'negativo'
+      
+      print(f'''Resultado: {"%.2f" %result}
+Número é {pos} e {intdec}.''')
+      return
+    

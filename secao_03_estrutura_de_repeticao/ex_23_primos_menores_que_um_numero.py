@@ -38,8 +38,41 @@ Serão avaliados o funcionamento, o estilo e o número de testes (divisões) exe
     True
 
 """
+from ntpath import join
 from typing import Tuple
 
 
 def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
     """Escreva aqui em baixo a sua solução"""
+    if n <= 1:
+        return '', 0
+    j = 1
+
+    x = n
+    lista = []
+    lista2 = []
+    i = n-1
+    ndiv = 0
+    contador = 1
+
+    while n > 1:
+        while i > 1:
+            lista.append(n%i)
+            i -= 1
+        if 0 not in lista:
+            lista2.append(str(n))
+            contador += 1
+        n -= 1
+        i = n-1
+        lista = []
+    lista2.reverse()
+
+    if x <= 2:
+        ndiv = 0
+    if x >= 3:
+        for i in range(x-2):
+            ndiv += j
+            j += 1
+    
+    y = ", ".join(lista2)
+    return y, ndiv
